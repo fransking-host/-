@@ -1,0 +1,17 @@
+PCB* p=new PCB(1,0,10);
+	p->name="进程1";
+	dis(p);
+	int i=0;
+	while (1){
+		if (checkPCB(p)==0) {
+			p->flag=1;
+			run(p);
+		}
+		else {
+			p->flag=2;
+			break;
+		}
+		dis(p);
+		p->flag=0;
+	}
+	dis(p);
