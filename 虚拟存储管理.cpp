@@ -6,6 +6,7 @@ struct node{
 	int lastUsed;
 	int willUsed;
 };
+//1-2-3-4-2-1-5-6-2-1-2-3-7-6-3-2-1-2-3
 bool compare(node a,node b,int x){
 	switch(x){
 		case 0:

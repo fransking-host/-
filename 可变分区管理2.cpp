@@ -62,6 +62,7 @@ Table* at(int logicAddr,int size,Table* T){
 		if (h->logicAddr==logicAddr&&h->size==size) return h;
 		h=h->next;
 	}
+	cout<<"未找到该内存块，请检查输入"<<endl;
 	return NULL;
 }
 void lmalloc(Table* T,int size){
@@ -99,6 +100,10 @@ void merges(Table* p,Table* q){
 	}
 }
 void lfree(Table* T){
+	if (T==NULL) {
+		cout<<"试图释放不存在的内存块"<<endl;
+		return ;
+	}
 	T->flag=0;
 	T->H->capacity+=T->size;
 	merges(T,T->next);
